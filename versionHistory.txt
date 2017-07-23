@@ -3,5 +3,8 @@ Feautures:
 - Foreach
 - ZCMD + SSCANF
 
+myGM v0.2 (23/07/2017)
+* Adaugat sistem de helperi
+
 myGM v0.1 (17/07/2017)
 *	Versiunea de baza cu pluginul MySQL R41-3 

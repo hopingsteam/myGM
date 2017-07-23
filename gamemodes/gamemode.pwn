@@ -1,5 +1,5 @@
 /*
-	myGM v0.1
+	myGM v0.2
 	* Please check versionHistory.txt for more details
 	
 #Authors: Maurice and Yamato
@@ -8,7 +8,16 @@
 
 */
 
+/*
+if(sscanf(params, "iii", model,color1,color2)) return SCM;;;
+*/
+
 #include 	<a_samp>
+#include	<zcmd>
+#include	<sscanf2>
+#include	<foreach>
+#include	<crashdetect>
+
 
 #undef	  	MAX_PLAYERS
 #define	 	MAX_PLAYERS			50
@@ -16,9 +25,9 @@
 #include 	<a_mysql>
 
 #define		MYSQL_HOST 			"127.0.0.1"
-#define		MYSQL_USER 			"username"
-#define		MYSQL_PASSWORD 		"password"
-#define		MYSQL_DATABASE 		"database"
+#define		MYSQL_USER 			"root"
+#define		MYSQL_PASSWORD 		""
+#define		MYSQL_DATABASE 		"sampdb"
 
 #define		SECONDS_TO_LOGIN 	30
 
@@ -26,6 +35,14 @@
 #define 	DEFAULT_POS_Y 		1343.1572
 #define 	DEFAULT_POS_Z 		15.3746
 #define 	DEFAULT_POS_A 		270.1425
+
+#define COLOR_ADMCHAT 0xFFC266AA
+#define COLOR_FADE1 0xC3C3C3AA
+#define COLOR_LIGHTBLUE 0x33CCFFAA
+#define COLOR_LIGHTRED 0xFF6347AA
+#define COLOR_OOC 0xE0FFFFAA
+#define COLOR_RED 0xAA3333AA
+#define COLOR_YELLOW 0xFFFF00AA
 
 // MySQL connection handle
 new MySQL: g_SQL;
@@ -44,13 +61,22 @@ enum E_PLAYERS
 	Float: Z_Pos,
 	Float: A_Pos,
 	Interior,
+	HelperLevel,
 
 	Cache: Cache_ID,
 	bool: IsLoggedIn,
 	LoginAttempts,
 	LoginTimer
 };
-new Player[MAX_PLAYERS][E_PLAYERS];
+new PlayerData[MAX_PLAYERS][E_PLAYERS];
+
+new HelperDuty[MAX_PLAYERS];
+new HelperOcupat[MAX_PLAYERS];
+new HelperAtribuit[MAX_PLAYERS];
+new ConversatieOpen[MAX_PLAYERS];
+new IntrebareStocata[MAX_PLAYERS][128];
+
+new HelpMeTimer[MAX_PLAYERS];
 
 new g_MysqlRaceCheck[MAX_PLAYERS];
 
@@ -109,13 +135,21 @@ public OnPlayerConnect(playerid)
 
 	// reset player data
 	static const empty_player[E_PLAYERS];
-	Player[playerid] = empty_player;
+	PlayerData[playerid] = empty_player;
 
-	GetPlayerName(playerid, Player[playerid][Name], MAX_PLAYER_NAME);
+	HelperDuty[playerid] = 0;
+	HelperOcupat[playerid] = -1;
+	HelperAtribuit[playerid] = -1;
+	ConversatieOpen[playerid] = 0;
+	IntrebareStocata[playerid] = "Ceva";
+	
+	HelpMeTimer[playerid] = 0;
+	
+	GetPlayerName(playerid, PlayerData[playerid][Name], MAX_PLAYER_NAME);
 
 	// send a query to recieve all the stored player data from the table
 	new query[103];
-	mysql_format(g_SQL, query, sizeof query, "SELECT * FROM `players` WHERE `username` = '%e' LIMIT 1", Player[playerid][Name]);
+	mysql_format(g_SQL, query, sizeof query, "SELECT * FROM `players` WHERE `username` = '%e' LIMIT 1", PlayerData[playerid][Name]);
 	mysql_tquery(g_SQL, query, "OnPlayerDataLoaded", "dd", playerid, g_MysqlRaceCheck[playerid]);
 	return 1;
 }
@@ -127,30 +161,37 @@ public OnPlayerDisconnect(playerid, reason)
 	UpdatePlayerData(playerid, reason);
 
 	// if the player was kicked (either wrong password or taking too long) during the login part, remove the data from the memory
-	if (cache_is_valid(Player[playerid][Cache_ID]))
+	if (cache_is_valid(PlayerData[playerid][Cache_ID]))
 	{
-		cache_delete(Player[playerid][Cache_ID]);
-		Player[playerid][Cache_ID] = MYSQL_INVALID_CACHE;
+		cache_delete(PlayerData[playerid][Cache_ID]);
+		PlayerData[playerid][Cache_ID] = MYSQL_INVALID_CACHE;
 	}
 
 	// if the player was kicked before the time expires (30 seconds), kill the timer
-	if (Player[playerid][LoginTimer])
+	if (PlayerData[playerid][LoginTimer])
 	{
-		KillTimer(Player[playerid][LoginTimer]);
-		Player[playerid][LoginTimer] = 0;
+		KillTimer(PlayerData[playerid][LoginTimer]);
+		PlayerData[playerid][LoginTimer] = 0;
 	}
 
 	// sets "IsLoggedIn" to false when the player disconnects, it prevents from saving the player data twice when "gmx" is used
-	Player[playerid][IsLoggedIn] = false;
+	PlayerData[playerid][IsLoggedIn] = false;
+	
+	if(HelpMeTimer[playerid])
+	{
+		KillTimer(HelpMeTimer[playerid]);
+		HelpMeTimer[playerid] = 0;
+	}
+	
 	return 1;
 }
 
 public OnPlayerSpawn(playerid)
 {
 	// spawn the player to their last saved position
-	SetPlayerInterior(playerid, Player[playerid][Interior]);
-	SetPlayerPos(playerid, Player[playerid][X_Pos], Player[playerid][Y_Pos], Player[playerid][Z_Pos]);
-	SetPlayerFacingAngle(playerid, Player[playerid][A_Pos]);
+	SetPlayerInterior(playerid, PlayerData[playerid][Interior]);
+	SetPlayerPos(playerid, PlayerData[playerid][X_Pos], PlayerData[playerid][Y_Pos], PlayerData[playerid][Z_Pos]);
+	SetPlayerFacingAngle(playerid, PlayerData[playerid][A_Pos]);
 	
 	SetCameraBehindPlayer(playerid);
 	return 1;
@@ -174,35 +215,35 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			if (!response) return Kick(playerid);
 
 			new hashed_pass[65];
-			SHA256_PassHash(inputtext, Player[playerid][Salt], hashed_pass, 65);
+			SHA256_PassHash(inputtext, PlayerData[playerid][Salt], hashed_pass, 65);
 
-			if (strcmp(hashed_pass, Player[playerid][Password]) == 0)
+			if (strcmp(hashed_pass, PlayerData[playerid][Password]) == 0)
 			{
 				//correct password, spawn the player
 				ShowPlayerDialog(playerid, DIALOG_UNUSED, DIALOG_STYLE_MSGBOX, "Login", "You have been successfully logged in.", "Okay", "");
 
 				// sets the specified cache as the active cache so we can retrieve the rest player data
-				cache_set_active(Player[playerid][Cache_ID]);
+				cache_set_active(PlayerData[playerid][Cache_ID]);
 
 				AssignPlayerData(playerid);
 
 				// remove the active cache from memory and unsets the active cache as well
-				cache_delete(Player[playerid][Cache_ID]);
-				Player[playerid][Cache_ID] = MYSQL_INVALID_CACHE;
+				cache_delete(PlayerData[playerid][Cache_ID]);
+				PlayerData[playerid][Cache_ID] = MYSQL_INVALID_CACHE;
 
-				KillTimer(Player[playerid][LoginTimer]);
-				Player[playerid][LoginTimer] = 0;
-				Player[playerid][IsLoggedIn] = true;
+				KillTimer(PlayerData[playerid][LoginTimer]);
+				PlayerData[playerid][LoginTimer] = 0;
+				PlayerData[playerid][IsLoggedIn] = true;
 
 				// spawn the player to their last saved position after login
-				SetSpawnInfo(playerid, NO_TEAM, 0, Player[playerid][X_Pos], Player[playerid][Y_Pos], Player[playerid][Z_Pos], Player[playerid][A_Pos], 0, 0, 0, 0, 0, 0);
+				SetSpawnInfo(playerid, NO_TEAM, 0, PlayerData[playerid][X_Pos], PlayerData[playerid][Y_Pos], PlayerData[playerid][Z_Pos], PlayerData[playerid][A_Pos], 0, 0, 0, 0, 0, 0);
 				SpawnPlayer(playerid);
 			}
 			else
 			{
-				Player[playerid][LoginAttempts]++;
+				PlayerData[playerid][LoginAttempts]++;
 
-				if (Player[playerid][LoginAttempts] >= 3)
+				if (PlayerData[playerid][LoginAttempts] >= 3)
 				{
 					ShowPlayerDialog(playerid, DIALOG_UNUSED, DIALOG_STYLE_MSGBOX, "Login", "You have mistyped your password too often (3 times).", "Okay", "");
 					DelayedKick(playerid);
@@ -217,11 +258,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			if (strlen(inputtext) <= 5) return ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_PASSWORD, "Registration", "Your password must be longer than 5 characters!\nPlease enter your password in the field below:", "Register", "Abort");
 
 			// 16 random characters from 33 to 126 (in ASCII) for the salt
-			for (new i = 0; i < 16; i++) Player[playerid][Salt][i] = random(94) + 33;
-			SHA256_PassHash(inputtext, Player[playerid][Salt], Player[playerid][Password], 65);
+			for (new i = 0; i < 16; i++) PlayerData[playerid][Salt][i] = random(94) + 33;
+			SHA256_PassHash(inputtext, PlayerData[playerid][Salt], PlayerData[playerid][Password], 65);
 
 			new query[221];
-			mysql_format(g_SQL, query, sizeof query, "INSERT INTO `players` (`username`, `password`, `salt`) VALUES ('%e', '%s', '%e')", Player[playerid][Name], Player[playerid][Password], Player[playerid][Salt]);
+			mysql_format(g_SQL, query, sizeof query, "INSERT INTO `players` (`username`, `password`, `salt`) VALUES ('%e', '%s', '%e')", PlayerData[playerid][Name], PlayerData[playerid][Password], PlayerData[playerid][Salt]);
 			mysql_tquery(g_SQL, query, "OnPlayerRegister", "d", playerid);
 		}
 
@@ -239,7 +280,6 @@ public OnPlayerDataLoaded(playerid, race_check)
 		player A connects -> SELECT query is fired -> this query takes very long
 		while the query is still processing, player A with playerid 2 disconnects
 		player B joins now with playerid 2 -> our laggy SELECT query is finally finished, but for the wrong player
-
 		what do we do against it?
 		we create a connection count for each playerid and increase it everytime the playerid connects or disconnects
 		we also pass the current value of the connection count to our OnPlayerDataLoaded callback
@@ -253,21 +293,21 @@ public OnPlayerDataLoaded(playerid, race_check)
 	{
 		// we store the password and the salt so we can compare the password the player inputs
 		// and save the rest so we won't have to execute another query later
-		cache_get_value(0, "password", Player[playerid][Password], 65);
-		cache_get_value(0, "salt", Player[playerid][Salt], 17);
+		cache_get_value(0, "password", PlayerData[playerid][Password], 65);
+		cache_get_value(0, "salt", PlayerData[playerid][Salt], 17);
 
 		// saves the active cache in the memory and returns an cache-id to access it for later use
-		Player[playerid][Cache_ID] = cache_save();
+		PlayerData[playerid][Cache_ID] = cache_save();
 
-		format(string, sizeof string, "This account (%s) is registered. Please login by entering your password in the field below:", Player[playerid][Name]);
+		format(string, sizeof string, "This account (%s) is registered. Please login by entering your password in the field below:", PlayerData[playerid][Name]);
 		ShowPlayerDialog(playerid, DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Login", string, "Login", "Abort");
 
 		// from now on, the player has 30 seconds to login
-		Player[playerid][LoginTimer] = SetTimerEx("OnLoginTimeout", SECONDS_TO_LOGIN * 1000, false, "d", playerid);
+		PlayerData[playerid][LoginTimer] = SetTimerEx("OnLoginTimeout", SECONDS_TO_LOGIN * 1000, false, "d", playerid);
 	}
 	else
 	{
-		format(string, sizeof string, "Welcome %s, you can register by entering your password in the field below:", Player[playerid][Name]);
+		format(string, sizeof string, "Welcome %s, you can register by entering your password in the field below:", PlayerData[playerid][Name]);
 		ShowPlayerDialog(playerid, DIALOG_REGISTER, DIALOG_STYLE_PASSWORD, "Registration", string, "Register", "Abort");
 	}
 	return 1;
@@ -277,7 +317,7 @@ forward OnLoginTimeout(playerid);
 public OnLoginTimeout(playerid)
 {
 	// reset the variable that stores the timerid
-	Player[playerid][LoginTimer] = 0;
+	PlayerData[playerid][LoginTimer] = 0;
 	
 	ShowPlayerDialog(playerid, DIALOG_UNUSED, DIALOG_STYLE_MSGBOX, "Login", "You have been kicked for taking too long to login successfully to your account.", "Okay", "");
 	DelayedKick(playerid);
@@ -288,18 +328,18 @@ forward OnPlayerRegister(playerid);
 public OnPlayerRegister(playerid)
 {
 	// retrieves the ID generated for an AUTO_INCREMENT column by the sent query
-	Player[playerid][ID] = cache_insert_id();
+	PlayerData[playerid][ID] = cache_insert_id();
 
 	ShowPlayerDialog(playerid, DIALOG_UNUSED, DIALOG_STYLE_MSGBOX, "Registration", "Account successfully registered, you have been automatically logged in.", "Okay", "");
 
-	Player[playerid][IsLoggedIn] = true;
+	PlayerData[playerid][IsLoggedIn] = true;
 
-	Player[playerid][X_Pos] = DEFAULT_POS_X;
-	Player[playerid][Y_Pos] = DEFAULT_POS_Y;
-	Player[playerid][Z_Pos] = DEFAULT_POS_Z;
-	Player[playerid][A_Pos] = DEFAULT_POS_A;
+	PlayerData[playerid][X_Pos] = DEFAULT_POS_X;
+	PlayerData[playerid][Y_Pos] = DEFAULT_POS_Y;
+	PlayerData[playerid][Z_Pos] = DEFAULT_POS_Z;
+	PlayerData[playerid][A_Pos] = DEFAULT_POS_A;
 	
-	SetSpawnInfo(playerid, NO_TEAM, 0, Player[playerid][X_Pos], Player[playerid][Y_Pos], Player[playerid][Z_Pos], Player[playerid][A_Pos], 0, 0, 0, 0, 0, 0);
+	SetSpawnInfo(playerid, NO_TEAM, 0, PlayerData[playerid][X_Pos], PlayerData[playerid][Y_Pos], PlayerData[playerid][Z_Pos], PlayerData[playerid][A_Pos], 0, 0, 0, 0, 0, 0);
 	SpawnPlayer(playerid);
 	return 1;
 }
@@ -316,16 +356,23 @@ public _KickPlayerDelayed(playerid)
 
 AssignPlayerData(playerid)
 {
-	cache_get_value_int(0, "id", Player[playerid][ID]);
+	cache_get_value_int(0, "id", PlayerData[playerid][ID]);
 	
-	cache_get_value_int(0, "kills", Player[playerid][Kills]);
-	cache_get_value_int(0, "deaths", Player[playerid][Deaths]);
+	cache_get_value_int(0, "kills", PlayerData[playerid][Kills]);
+	cache_get_value_int(0, "deaths", PlayerData[playerid][Deaths]);
 	
-	cache_get_value_float(0, "x", Player[playerid][X_Pos]);
-	cache_get_value_float(0, "y", Player[playerid][Y_Pos]);
-	cache_get_value_float(0, "z", Player[playerid][Z_Pos]);
-	cache_get_value_float(0, "angle", Player[playerid][A_Pos]);
-	cache_get_value_int(0, "interior", Player[playerid][Interior]);
+	cache_get_value_float(0, "x", PlayerData[playerid][X_Pos]);
+	cache_get_value_float(0, "y", PlayerData[playerid][Y_Pos]);
+	cache_get_value_float(0, "z", PlayerData[playerid][Z_Pos]);
+	cache_get_value_float(0, "angle", PlayerData[playerid][A_Pos]);
+	cache_get_value_int(0, "interior", PlayerData[playerid][Interior]);
+	
+	cache_get_value_int(0, "HelperLevel", PlayerData[playerid][HelperLevel]);
+	
+	new string[128];
+	format(string, sizeof(string), "%s (%d) are level helper %d", PlayerData[playerid][Name], playerid, PlayerData[playerid][HelperLevel]);
+	printf(string);
+	
 	return 1;
 }
 
@@ -343,30 +390,30 @@ SetupPlayerTable()
 
 UpdatePlayerData(playerid, reason)
 {
-	if (Player[playerid][IsLoggedIn] == false) return 0;
+	if (PlayerData[playerid][IsLoggedIn] == false) return 0;
 
 	// if the client crashed, it's not possible to get the player's position in OnPlayerDisconnect callback
 	// so we will use the last saved position (in case of a player who registered and crashed/kicked, the position will be the default spawn point)
 	if (reason == 1)
 	{
-		GetPlayerPos(playerid, Player[playerid][X_Pos], Player[playerid][Y_Pos], Player[playerid][Z_Pos]);
-		GetPlayerFacingAngle(playerid, Player[playerid][A_Pos]);
+		GetPlayerPos(playerid, PlayerData[playerid][X_Pos], PlayerData[playerid][Y_Pos], PlayerData[playerid][Z_Pos]);
+		GetPlayerFacingAngle(playerid, PlayerData[playerid][A_Pos]);
 	}
 	
 	new query[145];
-	mysql_format(g_SQL, query, sizeof query, "UPDATE `players` SET `x` = %f, `y` = %f, `z` = %f, `angle` = %f, `interior` = %d WHERE `id` = %d LIMIT 1", Player[playerid][X_Pos], Player[playerid][Y_Pos], Player[playerid][Z_Pos], Player[playerid][A_Pos], GetPlayerInterior(playerid), Player[playerid][ID]);
+	mysql_format(g_SQL, query, sizeof query, "UPDATE `players` SET `x` = %f, `y` = %f, `z` = %f, `angle` = %f, `interior` = %d WHERE `id` = %d LIMIT 1", PlayerData[playerid][X_Pos], PlayerData[playerid][Y_Pos], PlayerData[playerid][Z_Pos], PlayerData[playerid][A_Pos], GetPlayerInterior(playerid), PlayerData[playerid][ID]);
 	mysql_tquery(g_SQL, query);
 	return 1;
 }
 
 UpdatePlayerDeaths(playerid)
 {
-	if (Player[playerid][IsLoggedIn] == false) return 0;
+	if (PlayerData[playerid][IsLoggedIn] == false) return 0;
 	
-	Player[playerid][Deaths]++;
+	PlayerData[playerid][Deaths]++;
 	
 	new query[70];
-	mysql_format(g_SQL, query, sizeof query, "UPDATE `players` SET `deaths` = %d WHERE `id` = %d LIMIT 1", Player[playerid][Deaths], Player[playerid][ID]);
+	mysql_format(g_SQL, query, sizeof query, "UPDATE `players` SET `deaths` = %d WHERE `id` = %d LIMIT 1", PlayerData[playerid][Deaths], PlayerData[playerid][ID]);
 	mysql_tquery(g_SQL, query);
 	return 1;
 }
@@ -375,12 +422,282 @@ UpdatePlayerKills(killerid)
 {
 	// we must check before if the killer wasn't valid (connected) player to avoid run time error 4
 	if (killerid == INVALID_PLAYER_ID) return 0;
-	if (Player[killerid][IsLoggedIn] == false) return 0;
+	if (PlayerData[killerid][IsLoggedIn] == false) return 0;
 	
-	Player[killerid][Kills]++;
+	PlayerData[killerid][Kills]++;
 	
 	new query[70];
-	mysql_format(g_SQL, query, sizeof query, "UPDATE `players` SET `kills` = %d WHERE `id` = %d LIMIT 1", Player[killerid][Kills], Player[killerid][ID]);
+	mysql_format(g_SQL, query, sizeof query, "UPDATE `players` SET `kills` = %d WHERE `id` = %d LIMIT 1", PlayerData[killerid][Kills], PlayerData[killerid][ID]);
 	mysql_tquery(g_SQL, query);
 	return 1;
+}
+
+CMD:makehelper(playerid, params[])
+{
+	new targetid, level;
+	if(!IsPlayerAdmin(playerid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Nu esti admin!");
+	if(sscanf(params, "ui", targetid, level)) return SendClientMessage(playerid, COLOR_FADE1, "Utilizare: /makehelper <jucator> <level>");
+	if(level < 0 || level > 2) return SendClientMessage(playerid, COLOR_FADE1, "Eroare: Level-ul introdus este incorect.");
+	
+	PlayerData[targetid][HelperLevel] = level;
+	new query[70];
+	mysql_format(g_SQL, query, sizeof query, "UPDATE `players` SET `HelperLevel` = %d WHERE `id` = %d LIMIT 1", PlayerData[targetid][HelperLevel], PlayerData[targetid][ID]);
+	mysql_tquery(g_SQL, query);
+	
+	new string[128];
+	format(string, sizeof(string), "Ai dat helper level %d lui %s (%d)", level, PlayerData[targetid][Name], targetid);
+	SendClientMessage(playerid, COLOR_ADMCHAT, string);
+	
+	format(string, sizeof(string), "Ai primit helper level %d de la %s (%d)", level, PlayerData[playerid][Name], playerid);
+	SendClientMessage(targetid, COLOR_ADMCHAT, string);
+	return 1;
+}
+
+CMD:hc(playerid, params[])
+{
+	new message[128];
+	if(PlayerData[playerid][HelperLevel] == 0) return SendClientMessage(playerid, COLOR_LIGHTRED, "Nu esti helper!");
+	if(sscanf(params, "s[128]", message)) return SendClientMessage(playerid, COLOR_FADE1, "Utilizare: /hc <mesaj>");
+	
+	new string[128];
+	format(string, sizeof(string), "HLevel %d %s (%d): %s", PlayerData[playerid][HelperLevel], PlayerData[playerid][Name], playerid, message);
+	HBroadCast(COLOR_ADMCHAT, string);
+	
+	return 1;
+}
+
+
+CMD:hduty(playerid, params[])
+{
+	new string[128];
+	if(PlayerData[playerid][HelperLevel] == 0) return SendClientMessage(playerid, COLOR_LIGHTRED, "Nu esti helper!");
+	if(HelperDuty[playerid] == 0)
+	{
+		format(string, sizeof(string), "Helper %s (%d) este acum ON-DUTY. Scrieti /needhelp sau /n pentru ajutor", PlayerData[playerid][Name], playerid);
+		HelperDuty[playerid] = 1;
+	}
+	else
+	{
+		format(string, sizeof(string), "Helper %s (%d) este acum OFF-DUTY.", PlayerData[playerid][Name], playerid);
+		HelperDuty[playerid] = 0;
+	}
+	SendClientMessageToAll(COLOR_LIGHTBLUE, string);
+	return 1;
+}
+
+CMD:helpers(playerid, params[])
+{
+	new string[128];
+	new total = 0, totalDuty = 0;
+	SendClientMessage(playerid, COLOR_OOC, "Helpers Online:");
+	foreach(new i: Player)
+	{
+		if(PlayerData[i][HelperLevel] > 0)
+		{
+			if(HelperDuty[i] == 1)
+			{
+				format(string, sizeof(string), "Helper Level %d %s (%d) - ON DUTY", PlayerData[i][HelperLevel], PlayerData[i][Name], i);
+				totalDuty++;
+			}
+			else
+				format(string, sizeof(string), "Helper Level %d %s (%d)", PlayerData[i][HelperLevel], PlayerData[i][Name], i);
+			SendClientMessage(playerid, COLOR_OOC, string);
+			
+			total++;
+		}
+	}
+	format(string, sizeof(string), "In total sunt %d helperi (din care %d ON-DUTY)",total, totalDuty);
+	SendClientMessage(playerid, COLOR_OOC, string);
+	return 1;
+}
+
+CMD:needhelp(playerid, params[])
+{
+	new message[128];
+	new string[128];
+	if(sscanf(params, "s[128]", message)) return SendClientMessage(playerid, COLOR_FADE1, "Utilizare: /needhelp <mesaj>");
+	
+	format(string, sizeof(string), "%s (%d) intreaba: %s", PlayerData[playerid][Name], playerid, message);
+	HBroadCast(COLOR_ADMCHAT, string);
+	
+	SendClientMessage(playerid, COLOR_ADMCHAT, "Intrebarea ta a fost trimisa");
+	return 1;
+}
+
+CMD:n(playerid, params[])
+{
+	new message[128];
+	if(sscanf(params, "s[128]", message)) return SendClientMessage(playerid, COLOR_FADE1, "Utilizare: /n <mesaj>");
+	if(HelperAtribuit[playerid] != -1) return SendClientMessage(playerid, COLOR_LIGHTRED, "Ai deja un helper atribuit!");
+	
+	IntrebareStocata[playerid] = message;
+	
+	CautaHelper(playerid);
+	return 1;
+}
+
+CMD:ar(playerid, params[])
+{
+	new jucatorAtribuit;
+	if(PlayerData[playerid][HelperLevel] == 0) return SendClientMessage(playerid, COLOR_LIGHTRED, "Nu esti helper!");
+	if(HelperOcupat[playerid] == -1) return SendClientMessage(playerid, COLOR_LIGHTRED, "Nu ai atribuit nici un jucator!");
+	if(ConversatieOpen[playerid] == 1) return SendClientMessage(playerid, COLOR_LIGHTRED, "Ai acceptat deja cererea.");
+	
+	jucatorAtribuit = HelperOcupat[playerid];
+	SendClientMessage(jucatorAtribuit, COLOR_YELLOW, "Cererea ta a fost acceptata, poti vorbii prin /hl");
+	
+	SendClientMessage(playerid, COLOR_YELLOW, "Ai acceptat cererea.");
+	
+	ConversatieOpen[playerid] = 1;
+	return 1;
+}
+
+CMD:cr(playerid, params[])
+{
+	new message[128];
+	if(PlayerData[playerid][HelperLevel] == 0) return SendClientMessage(playerid, COLOR_LIGHTRED, "Nu esti helper!");
+	if(HelperOcupat[playerid] == -1) return SendClientMessage(playerid, COLOR_LIGHTRED, "Nu ai atribuit nici un jucator!");
+	if(sscanf(params, "s[128]", message)) return SendClientMessage(playerid, COLOR_FADE1, "Utilizare: /cr <motiv>");
+	
+	new jucatorAtribuit = HelperOcupat[playerid];
+	
+	if(ConversatieOpen[playerid] == 1)
+	{
+		new string[128];
+		format(string, sizeof(string), "Helperul %s (%d) a inchis conversatia cu tine. Mesaj: %s", PlayerData[playerid][Name], playerid, message);
+		SendClientMessage(jucatorAtribuit, COLOR_YELLOW, string);
+		
+		format(string, sizeof(string), "Ai inchis conversatia cu %s (%d). Mesaj: %s", PlayerData[jucatorAtribuit], jucatorAtribuit, message);
+		SendClientMessage(playerid, COLOR_YELLOW, string);
+		
+		HelperOcupat[playerid] = -1;
+		HelperAtribuit[jucatorAtribuit] = -1;
+		
+		ConversatieOpen[playerid] = 0;
+	}
+	else
+	{
+		new string[128];
+		format(string, sizeof(string), "Helper %s (%d): %s", PlayerData[playerid][Name], playerid, message);
+		SendClientMessage(jucatorAtribuit, COLOR_ADMCHAT, string);
+		
+		format(string, sizeof(string), "%s (%d) intreaba: %s", PlayerData[jucatorAtribuit][Name], jucatorAtribuit, IntrebareStocata[jucatorAtribuit]);
+		SendClientMessageToAll(COLOR_ADMCHAT, string);
+		
+		format(string, sizeof(string), "%s (%d) a raspuns: %s", PlayerData[playerid][Name], playerid, message);
+		SendClientMessageToAll(COLOR_ADMCHAT, string);
+		
+		HelperOcupat[playerid] = -1;
+		HelperAtribuit[jucatorAtribuit] = -1;
+	}
+	return 1;
+}
+
+CMD:hl(playerid, params[])
+{
+	new message[128];
+	if(HelperOcupat[playerid] == -1 && PlayerData[playerid][HelperLevel] > 0) return SendClientMessage(playerid, COLOR_LIGHTRED, "Eroare: Niciun jucator nu ti-a fost atribuit.");
+	if(HelperAtribuit[playerid] == -1 && PlayerData[playerid][HelperLevel] == 0) return SendClientMessage(playerid, COLOR_LIGHTRED, "Eroare: Niciun helper nu ti-a fost atribuit.");
+	if(PlayerData[playerid][HelperLevel] == 0 && ConversatieOpen[ HelperAtribuit[playerid] ] == 0) return SendClientMessage(playerid, COLOR_LIGHTRED, "Eroare: Helperul nu a deschis conversatia cu tine.");
+	if(PlayerData[playerid][HelperLevel] > 0 && ConversatieOpen[playerid] == 0) return SendClientMessage(playerid, COLOR_LIGHTRED, "Eroare: Nu ai deschis prin /ar conversatia cu jucatorul.");
+	
+	if(sscanf(params, "s[128]", message)) return SendClientMessage(playerid, COLOR_FADE1, "Utilizare: /hl <mesaj>");
+	
+	new string[128];
+	if(PlayerData[playerid][HelperLevel] > 0)
+	{//Tasteaza helper
+		new jucatorAtribuit = HelperOcupat[playerid];
+		format(string, sizeof(string), "Helper %s (%d): %s", PlayerData[playerid][Name], playerid, message);
+		SendClientMessage(playerid, COLOR_LIGHTBLUE, string);
+		
+		SendClientMessage(jucatorAtribuit, COLOR_LIGHTBLUE, string);
+	}
+	else
+	{//Tasteaza jucatorul
+		new helperAtribuit = HelperAtribuit[playerid];
+		format(string, sizeof(string), "Jucator %s (%d): %s", PlayerData[playerid][Name], playerid, message);
+		SendClientMessage(playerid, COLOR_LIGHTBLUE, string);
+		
+		SendClientMessage(helperAtribuit, COLOR_LIGHTBLUE, string);
+	}
+	return 1;
+}
+
+CMD:skipn(playerid, params[])
+{
+	new jucatorAtribuit;
+	if(PlayerData[playerid][HelperLevel] == 0) return SendClientMessage(playerid, COLOR_LIGHTRED, "Nu esti helper!");
+	if(HelperOcupat[playerid] == -1) return SendClientMessage(playerid, COLOR_LIGHTRED, "Nu ai atribuit nici un jucator!");
+	
+	jucatorAtribuit = HelperOcupat[playerid];
+	CautaHelperNou(jucatorAtribuit, 0);
+	return 1;
+}
+
+forward CautaHelperNou(playerid, reason);
+public CautaHelperNou(playerid, reason)
+{
+	new string[128];
+	new helperAtribuit = HelperAtribuit[playerid];
+	if(reason == 0)
+	{// In caz de /skipn
+		format(string, sizeof(string), "Helperul %s (%d) a tastat /skipn. Se cauta un nou helper", PlayerData[helperAtribuit][Name], helperAtribuit);
+		SendClientMessage(playerid, COLOR_YELLOW, string);
+		
+		format(string, sizeof(string), "Ai anulat cererea lui %s (%d).", PlayerData[playerid][Name], playerid);
+		SendClientMessage(helperAtribuit, COLOR_YELLOW, string);
+	}
+	else
+	{// In caz de Timer
+		format(string, sizeof(string), "Helperul %s (%d) nu a raspuns in 30 de secunde. Se cauta un nou helper.", PlayerData[helperAtribuit][Name], helperAtribuit);
+		SendClientMessage(playerid, COLOR_YELLOW, string);
+		
+		format(string, sizeof(string), "Nu ai raspuns in 30 de secunde lui %s (%d).", PlayerData[playerid][Name], playerid);
+		SendClientMessage(helperAtribuit, COLOR_YELLOW, string);
+	}
+	
+	CautaHelper(playerid);
+	HelperOcupat[helperAtribuit] = -1;
+	HelperAtribuit[playerid] = -1;
+}
+
+stock CautaHelper(playerid)
+{
+	new string[128];
+	new gasit = 0;
+	foreach(new i: Player)
+	{
+		if(PlayerData[i][HelperLevel] > 0 && HelperDuty[i] == 1 && HelperOcupat[i] == -1)
+		{//Am gasit helper
+			gasit = 1;
+			
+			format(string, sizeof(string), "Cererea ta a fost trimisa catre %s (%d). Asteapta un raspuns.", PlayerData[i][Name], i);
+			SendClientMessage(playerid, COLOR_ADMCHAT, string);
+			
+			format(string, sizeof(string), "O noua cerere de la %s (%d) << %s >>", PlayerData[playerid][Name], playerid, IntrebareStocata[playerid]);
+			SendClientMessage(i, COLOR_YELLOW, string);
+			
+			SendClientMessage(i, COLOR_YELLOW, "Scrie /ar pentru a accepta /skipn pentru a anula. Dupa ce ai terminat scrie /cr");
+			SendClientMessage(i, COLOR_YELLOW, "Ai 30 de secunde pentru a accepta.");
+			
+			HelperOcupat[i] = playerid;
+			HelperAtribuit[playerid] = i;
+			
+			HelpMeTimer[playerid] = SetTimerEx("CautaHelperNou", 10 * 1000, false, "ii", playerid, 1);
+		}
+		
+		if(gasit == 1)
+			break;
+	}
+	if(gasit == 0)
+		SendClientMessage(playerid, COLOR_LIGHTRED, "Nici un helper disponibil momentan");
+}
+
+stock HBroadCast(color, string[])
+{
+	foreach(new i: Player)
+	{
+		if(PlayerData[i][HelperLevel] > 0)
+			SendClientMessage(i, color, string);
+	}
 }
