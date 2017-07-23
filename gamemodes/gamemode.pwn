@@ -37,12 +37,13 @@ if(sscanf(params, "iii", model,color1,color2)) return SCM;;;
 #define 	DEFAULT_POS_A 		270.1425
 
 #define COLOR_ADMCHAT 0xFFC266AA
-#define COLOR_FADE1 0xC3C3C3AA
+#define COLOR_GREY 0xC3C3C3AA
 #define COLOR_LIGHTBLUE 0x33CCFFAA
 #define COLOR_LIGHTRED 0xFF6347AA
 #define COLOR_OOC 0xE0FFFFAA
 #define COLOR_RED 0xAA3333AA
 #define COLOR_YELLOW 0xFFFF00AA
+#define COLOR_PENTRUTEST 0xFF0000AA
 
 // MySQL connection handle
 new MySQL: g_SQL;
