@@ -624,6 +624,12 @@ CMD:hl(playerid, params[])
 	return 1;
 }
 
+CMD:site(playerid, params[])
+{
+	SendClientMessage(playerid, COLOR_ADMCHAT, "Site-ul este: tutoriale-pe.net");
+	return 1;
+}
+
 CMD:skipn(playerid, params[])
 {
 	new jucatorAtribuit;
