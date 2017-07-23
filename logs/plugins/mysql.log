@@ -1,0 +1,78 @@
+[19:47:11] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[19:47:11] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[19:47:11] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[19:47:11] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[19:47:20] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[19:47:20] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[19:47:20] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[19:47:20] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[19:47:25] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[19:47:25] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[19:47:25] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[19:47:25] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[19:49:21] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[19:49:21] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[19:49:21] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[19:49:21] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[19:49:29] [WARNING] mysql_connect: no password specified
+[19:51:18] [WARNING] mysql_connect: no password specified
+[19:52:12] [WARNING] mysql_connect: no password specified
+[20:01:06] [WARNING] mysql_connect: no password specified
+[20:26:43] [WARNING] mysql_connect: no password specified
+[20:27:18] [WARNING] mysql_connect: no password specified
+[20:33:55] [WARNING] mysql_connect: no password specified
+[20:37:04] [WARNING] mysql_connect: no password specified
+[20:51:24] [WARNING] mysql_connect: no password specified
+[20:52:16] [WARNING] mysql_connect: no password specified
+[20:55:36] [WARNING] mysql_connect: no password specified
+[21:05:01] [WARNING] mysql_connect: no password specified
+[21:13:35] [WARNING] mysql_connect: no password specified
+[22:09:22] [WARNING] mysql_connect: no password specified
+[22:16:13] [WARNING] mysql_connect: no password specified
+[22:21:14] [WARNING] mysql_connect: no password specified
+[22:24:42] [WARNING] mysql_connect: no password specified
+[03:49:38] [WARNING] mysql_connect: no password specified
+[12:54:10] [WARNING] mysql_connect: no password specified
+[12:57:27] [WARNING] mysql_connect: no password specified
+[12:58:57] [WARNING] mysql_connect: no password specified
+[12:59:26] [WARNING] mysql_connect: no password specified
+[13:06:59] [WARNING] mysql_connect: no password specified
+[13:07:12] [ERROR] cache_get_value_name_int: field 'HelperLevel' not found
+[13:07:51] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[13:07:51] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[13:07:51] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[13:07:51] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[13:07:51] [ERROR] mysql_format: can't escape string 'Yamato'
+[13:07:57] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[13:07:57] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[13:07:57] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[13:07:57] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[13:07:59] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[13:07:59] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[13:07:59] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[13:07:59] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[13:08:00] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[13:08:00] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[13:08:00] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[13:08:00] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #1045 'Access denied for user 'username'@'localhost' (using password: YES)'
+[13:16:33] [WARNING] mysql_connect: no password specified
+[13:25:20] [WARNING] mysql_connect: no password specified
+[13:48:32] [WARNING] mysql_connect: no password specified
+[14:04:52] [WARNING] mysql_connect: no password specified
+[14:52:40] [WARNING] mysql_connect: no password specified
+[15:11:50] [WARNING] mysql_connect: no password specified
+[15:13:44] [WARNING] mysql_connect: no password specified
+[15:51:56] [WARNING] mysql_connect: no password specified
+[15:51:57] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #2003 'Can't connect to MySQL server on '127.0.0.1' (0)'
+[15:51:58] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #2003 'Can't connect to MySQL server on '127.0.0.1' (0)'
+[15:51:59] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #2003 'Can't connect to MySQL server on '127.0.0.1' (0)'
+[15:52:00] [ERROR] CConnection::CConnection - establishing connection to MySQL database failed: #2003 'Can't connect to MySQL server on '127.0.0.1' (0)'
+[15:52:28] [WARNING] mysql_connect: no password specified
+[16:03:13] [WARNING] mysql_connect: no password specified
+[16:10:41] [WARNING] mysql_connect: no password specified
+[16:10:51] [WARNING] mysql_connect: no password specified
+[16:11:19] [WARNING] mysql_connect: no password specified
+[16:11:33] [WARNING] mysql_connect: no password specified
+[16:13:05] [WARNING] mysql_connect: no password specified
+[16:16:26] [WARNING] mysql_connect: no password specified
+[16:18:41] [WARNING] mysql_connect: no password specified

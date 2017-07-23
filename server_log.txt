@@ -1,0 +1,1474 @@
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:49:29] filterscripts = ""  (string)
+[19:49:29] 
+[19:49:29] Server Plugins
+[19:49:29] --------------
+[19:49:29]  Loading plugin: sscanf
+[19:49:29] 
+
+[19:49:29]  ===============================
+
+[19:49:29]       sscanf plugin loaded.     
+
+[19:49:29]    (c) 2009 Alex "Y_Less" Cole
+
+[19:49:29]    0.3d-R2 500 Players "dnee"
+
+[19:49:29]  ===============================
+
+[19:49:29]   Loaded.
+[19:49:29]  Loading plugin: mysql
+[19:49:29]  >> plugin.mysql: R41-3 successfully loaded.
+[19:49:29]   Loaded.
+[19:49:29]  Loaded 2 plugins.
+
+[19:49:29] 
+[19:49:29] Filterscripts
+[19:49:29] ---------------
+[19:49:29]   Loaded 0 filterscripts.
+
+[19:49:29] MySQL connection is successful.
+[19:49:29] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:50:58] Error: Your password must be changed from the default password, please change it.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:51:18] filterscripts = ""  (string)
+[19:51:18] 
+[19:51:18] Server Plugins
+[19:51:18] --------------
+[19:51:18]  Loading plugin: mysql
+[19:51:18]  >> plugin.mysql: R41-3 successfully loaded.
+[19:51:18]   Loaded.
+[19:51:18]  Loaded 1 plugins.
+
+[19:51:18] 
+[19:51:18] Filterscripts
+[19:51:18] ---------------
+[19:51:18]   Loaded 0 filterscripts.
+
+[19:51:18] MySQL connection is successful.
+[19:51:18] Number of vehicle models: 0
+[19:51:40] [connection] 127.0.0.1:54571 requests connection cookie.
+[19:51:41] [connection] incoming connection: 127.0.0.1:54571 id: 0
+[19:51:41] [join] Maurice has joined the server (0:127.0.0.1)
+[19:51:55] [part] Maurice has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:52:12] filterscripts = ""  (string)
+[19:52:12] 
+[19:52:12] Server Plugins
+[19:52:12] --------------
+[19:52:12]  Loading plugin: mysql
+[19:52:12]  >> plugin.mysql: R41-3 successfully loaded.
+[19:52:12]   Loaded.
+[19:52:12]  Loaded 1 plugins.
+
+[19:52:12] 
+[19:52:12] Filterscripts
+[19:52:12] ---------------
+[19:52:12]   Loaded 0 filterscripts.
+
+[19:52:12] MySQL connection is successful.
+[19:52:12] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[20:01:06] filterscripts = ""  (string)
+[20:01:06] 
+[20:01:06] Server Plugins
+[20:01:06] --------------
+[20:01:06]  Loading plugin: mysql
+[20:01:06]  >> plugin.mysql: R41-3 successfully loaded.
+[20:01:06]   Loaded.
+[20:01:06]  Loaded 1 plugins.
+
+[20:01:06] 
+[20:01:06] Filterscripts
+[20:01:06] ---------------
+[20:01:06]   Loaded 0 filterscripts.
+
+[20:01:06] MySQL connection is successful.
+[20:01:06] Number of vehicle models: 0
+[20:03:33] [connection] 25.105.65.236:60020 requests connection cookie.
+[20:03:34] [connection] incoming connection: 25.105.65.236:60020 id: 0
+[20:03:35] [join] Yamato has joined the server (0:25.105.65.236)
+[20:03:38] [connection] 127.0.0.1:63262 requests connection cookie.
+[20:03:39] [connection] incoming connection: 127.0.0.1:63262 id: 1
+[20:03:40] [join] Maurice has joined the server (1:127.0.0.1)
+[20:04:07] [part] Maurice has left the server (1:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[20:26:43] filterscripts = ""  (string)
+[20:26:43] 
+[20:26:43] Server Plugins
+[20:26:43] --------------
+[20:26:43]  Loading plugin: mysql
+[20:26:43]  >> plugin.mysql: R41-3 successfully loaded.
+[20:26:43]   Loaded.
+[20:26:43]  Loaded 1 plugins.
+
+[20:26:43] 
+[20:26:43] Filterscripts
+[20:26:43] ---------------
+[20:26:43]   Loaded 0 filterscripts.
+
+[20:26:43] MySQL connection is successful.
+[20:26:43] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[20:27:18] filterscripts = ""  (string)
+[20:27:18] 
+[20:27:18] Server Plugins
+[20:27:18] --------------
+[20:27:18]  Loading plugin: mysql
+[20:27:18]  >> plugin.mysql: R41-3 successfully loaded.
+[20:27:18]   Loaded.
+[20:27:18]  Loaded 1 plugins.
+
+[20:27:18] 
+[20:27:18] Filterscripts
+[20:27:18] ---------------
+[20:27:18]   Loaded 0 filterscripts.
+
+[20:27:18] MySQL connection is successful.
+[20:27:18] Number of vehicle models: 0
+[20:27:29] [connection] 25.105.65.236:58208 requests connection cookie.
+[20:27:30] [connection] incoming connection: 25.105.65.236:58208 id: 0
+[20:27:31] [join] Yamato has joined the server (0:25.105.65.236)
+[20:27:46] [part] Yamato has left the server (0:0)
+[20:27:50] [connection] 25.105.65.236:50557 requests connection cookie.
+[20:27:51] [connection] incoming connection: 25.105.65.236:50557 id: 0
+[20:27:51] [join] Yamato has joined the server (0:25.105.65.236)
+[20:28:00] Yamato (0) are level helper 2
+Console input: gmx
+[20:33:55] MySQL connection is successful.
+[20:33:55] Number of vehicle models: 0
+[20:34:18] [part] Yamato has left the server (0:2)
+[20:34:40] [connection] 25.105.65.236:64925 requests connection cookie.
+[20:34:41] [connection] incoming connection: 25.105.65.236:64925 id: 0
+[20:34:42] [join] Yamato has joined the server (0:25.105.65.236)
+[20:34:52] [part] Yamato has left the server (0:2)
+[20:35:23] [connection] 25.105.65.236:57685 requests connection cookie.
+[20:35:24] [connection] incoming connection: 25.105.65.236:57685 id: 0
+[20:35:25] [join] Yamato has joined the server (0:25.105.65.236)
+[20:35:31] Yamato (0) are level helper 2
+Console input: gmx
+[20:36:47] Script[gamemodes/gamemode.amx]: Run time error 19: "File or function is not found"
+[20:36:47] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[20:37:04] filterscripts = ""  (string)
+[20:37:04] 
+[20:37:04] Server Plugins
+[20:37:04] --------------
+[20:37:04]  Loading plugin: mysql
+[20:37:04]  >> plugin.mysql: R41-3 successfully loaded.
+[20:37:04]   Loaded.
+[20:37:04]  Loading plugin: sscanf
+[20:37:04] 
+
+[20:37:04]  ===============================
+
+[20:37:04]       sscanf plugin loaded.     
+
+[20:37:04]    (c) 2009 Alex "Y_Less" Cole
+
+[20:37:04]    0.3d-R2 500 Players "dnee"
+
+[20:37:04]  ===============================
+
+[20:37:04]   Loaded.
+[20:37:04]  Loaded 2 plugins.
+
+[20:37:04] 
+[20:37:04] Filterscripts
+[20:37:04] ---------------
+[20:37:04]   Loaded 0 filterscripts.
+
+[20:37:04] MySQL connection is successful.
+[20:37:04] Number of vehicle models: 0
+Console input: gmx
+[20:51:24]  
+[20:51:24]  
+[20:51:24]  
+[20:51:24]  ======================================= 
+[20:51:24]  |                                     | 
+[20:51:24]  |        YSI version 4.00.0001        | 
+[20:51:24]  |        By Alex "Y_Less" Cole        | 
+[20:51:24]  |                                     | 
+[20:51:24]  ======================================= 
+[20:51:24]  
+[20:51:24] MySQL connection is successful.
+[20:51:24] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[20:52:16] filterscripts = ""  (string)
+[20:52:16] 
+[20:52:16] Server Plugins
+[20:52:16] --------------
+[20:52:16]  Loading plugin: mysql
+[20:52:16]  >> plugin.mysql: R41-3 successfully loaded.
+[20:52:16]   Loaded.
+[20:52:16]  Loading plugin: sscanf
+[20:52:16] 
+
+[20:52:16]  ===============================
+
+[20:52:16]       sscanf plugin loaded.     
+
+[20:52:16]    (c) 2009 Alex "Y_Less" Cole
+
+[20:52:16]    0.3d-R2 500 Players "dnee"
+
+[20:52:16]  ===============================
+
+[20:52:16]   Loaded.
+[20:52:16]  Loaded 2 plugins.
+
+[20:52:16] 
+[20:52:16] Filterscripts
+[20:52:16] ---------------
+[20:52:16]   Loaded 0 filterscripts.
+
+[20:52:16]  
+[20:52:16]  
+[20:52:16]  
+[20:52:16]  ======================================= 
+[20:52:16]  |                                     | 
+[20:52:16]  |        YSI version 4.00.0001        | 
+[20:52:16]  |        By Alex "Y_Less" Cole        | 
+[20:52:16]  |                                     | 
+[20:52:16]  ======================================= 
+[20:52:16]  
+[20:52:16] MySQL connection is successful.
+[20:52:16] Number of vehicle models: 0
+[20:52:34] [connection] 127.0.0.1:60547 requests connection cookie.
+[20:52:35] [connection] incoming connection: 127.0.0.1:60547 id: 0
+[20:52:36] [join] Maurice has joined the server (0:127.0.0.1)
+[20:52:40] Maurice (0) are level helper 0
+[20:52:41] [connection] 25.105.65.236:58773 requests connection cookie.
+[20:52:42] [connection] incoming connection: 25.105.65.236:58773 id: 1
+[20:52:43] [join] Yamato has joined the server (1:25.105.65.236)
+[20:52:55] Yamato (1) are level helper 2
+[20:53:53] [part] Maurice has left the server (0:1)
+[20:54:23] [connection] 127.0.0.1:60549 requests connection cookie.
+[20:54:24] [connection] incoming connection: 127.0.0.1:60549 id: 0
+[20:54:24] [join] Maurice has joined the server (0:127.0.0.1)
+[20:54:26] Maurice (0) are level helper 1
+Console input: gmx
+[20:55:36]  
+[20:55:36]  
+[20:55:36]  
+[20:55:36]  ======================================= 
+[20:55:36]  |                                     | 
+[20:55:36]  |        YSI version 4.00.0001        | 
+[20:55:36]  |        By Alex "Y_Less" Cole        | 
+[20:55:36]  |                                     | 
+[20:55:36]  ======================================= 
+[20:55:36]  
+[20:55:36] MySQL connection is successful.
+[20:55:36] Number of vehicle models: 0
+[20:55:39] Maurice (0) are level helper 1
+[20:55:41] Yamato (1) are level helper 2
+Console input: gmx
+[21:05:01]  
+[21:05:01]  
+[21:05:01]  
+[21:05:01]  ======================================= 
+[21:05:01]  |                                     | 
+[21:05:01]  |        YSI version 4.00.0001        | 
+[21:05:01]  |        By Alex "Y_Less" Cole        | 
+[21:05:01]  |                                     | 
+[21:05:01]  ======================================= 
+[21:05:01]  
+[21:05:01] MySQL connection is successful.
+[21:05:01] Number of vehicle models: 0
+[21:05:05] Yamato (1) are level helper 2
+[21:05:05] Maurice (0) are level helper 1
+[21:05:14] RCON (In-Game): Player #0 (Maurice) has logged in.
+[21:05:16] RCON (In-Game): Player #1 (Yamato) failed login.
+[21:05:52] RCON (In-Game): Player #1 (Yamato) has logged in.
+Console input: gmxgmx
+Console input: gmx
+[21:13:35]  
+[21:13:35]  
+[21:13:35]  
+[21:13:35]  ======================================= 
+[21:13:35]  |                                     | 
+[21:13:35]  |        YSI version 4.00.0001        | 
+[21:13:35]  |        By Alex "Y_Less" Cole        | 
+[21:13:35]  |                                     | 
+[21:13:35]  ======================================= 
+[21:13:35]  
+[21:13:35] MySQL connection is successful.
+[21:13:35] Number of vehicle models: 0
+[21:13:37] Yamato (1) are level helper 2
+[21:13:40] Maurice (0) are level helper 2
+[21:14:12] RCON (In-Game): Player [Maurice] sent command: login
+[21:14:15] RCON (In-Game): Player [Maurice] sent command: login changeme1
+Console input: gmx
+[22:09:22]  
+[22:09:22]  
+[22:09:22]  
+[22:09:22]  ======================================= 
+[22:09:22]  |                                     | 
+[22:09:22]  |        YSI version 4.00.0001        | 
+[22:09:22]  |        By Alex "Y_Less" Cole        | 
+[22:09:22]  |                                     | 
+[22:09:22]  ======================================= 
+[22:09:22]  
+[22:09:22] MySQL connection is successful.
+[22:09:22] Number of vehicle models: 0
+[22:09:25] Maurice (0) are level helper 0
+[22:09:33] Yamato (1) are level helper 2
+Console input: gmx
+[22:16:13]  
+[22:16:13]  
+[22:16:13]  
+[22:16:13]  ======================================= 
+[22:16:13]  |                                     | 
+[22:16:13]  |        YSI version 4.00.0001        | 
+[22:16:13]  |        By Alex "Y_Less" Cole        | 
+[22:16:13]  |                                     | 
+[22:16:13]  ======================================= 
+[22:16:13]  
+[22:16:13] MySQL connection is successful.
+[22:16:13] Number of vehicle models: 0
+[22:16:15] Maurice (0) are level helper 0
+[22:16:27] Yamato (1) are level helper 2
+Console input: gmx
+[22:21:14]  
+[22:21:14]  
+[22:21:14]  
+[22:21:14]  ======================================= 
+[22:21:14]  |                                     | 
+[22:21:14]  |        YSI version 4.00.0001        | 
+[22:21:14]  |        By Alex "Y_Less" Cole        | 
+[22:21:14]  |                                     | 
+[22:21:14]  ======================================= 
+[22:21:14]  
+[22:21:14] MySQL connection is successful.
+[22:21:14] Number of vehicle models: 0
+[22:21:16] Maurice (0) are level helper 0
+[22:21:30] Yamato (1) are level helper 2
+Console input: gmx
+[22:24:42]  
+[22:24:42]  
+[22:24:42]  
+[22:24:42]  ======================================= 
+[22:24:42]  |                                     | 
+[22:24:42]  |        YSI version 4.00.0001        | 
+[22:24:42]  |        By Alex "Y_Less" Cole        | 
+[22:24:42]  |                                     | 
+[22:24:42]  ======================================= 
+[22:24:42]  
+[22:24:42] MySQL connection is successful.
+[22:24:42] Number of vehicle models: 0
+[22:24:44] Maurice (0) are level helper 2
+[22:24:49] Yamato (1) are level helper 0
+[22:33:32] [part] Maurice has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[03:49:38] filterscripts = ""  (string)
+[03:49:38] 
+[03:49:38] Server Plugins
+[03:49:38] --------------
+[03:49:38]  Loading plugin: mysql
+[03:49:38]  >> plugin.mysql: R41-3 successfully loaded.
+[03:49:38]   Loaded.
+[03:49:38]  Loading plugin: sscanf
+[03:49:38] 
+
+[03:49:38]  ===============================
+
+[03:49:38]       sscanf plugin loaded.     
+
+[03:49:38]    (c) 2009 Alex "Y_Less" Cole
+
+[03:49:38]    0.3d-R2 500 Players "dnee"
+
+[03:49:38]  ===============================
+
+[03:49:38]   Loaded.
+[03:49:38]  Loaded 2 plugins.
+
+[03:49:38] 
+[03:49:38] Filterscripts
+[03:49:38] ---------------
+[03:49:38]   Loaded 0 filterscripts.
+
+[03:49:38]  
+[03:49:38]  
+[03:49:38]  
+[03:49:38]  ======================================= 
+[03:49:38]  |                                     | 
+[03:49:38]  |        YSI version 4.00.0001        | 
+[03:49:38]  |        By Alex "Y_Less" Cole        | 
+[03:49:38]  |                                     | 
+[03:49:38]  ======================================= 
+[03:49:38]  
+[03:49:38] MySQL connection is successful.
+[03:49:38] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[12:54:06] filterscripts = ""  (string)
+[12:54:06] 
+[12:54:06] Server Plugins
+[12:54:06] --------------
+[12:54:06]  Loading plugin: mysql
+[12:54:07]  >> plugin.mysql: R41-3 successfully loaded.
+[12:54:07]   Loaded.
+[12:54:07]  Loading plugin: sscanf
+[12:54:07] 
+
+[12:54:07]  ===============================
+
+[12:54:07]       sscanf plugin loaded.     
+
+[12:54:07]    (c) 2009 Alex "Y_Less" Cole
+
+[12:54:07]    0.3d-R2 500 Players "dnee"
+
+[12:54:07]  ===============================
+
+[12:54:07]   Loaded.
+[12:54:07]  Loaded 2 plugins.
+
+[12:54:08] 
+[12:54:08] Filterscripts
+[12:54:08] ---------------
+[12:54:08]   Loaded 0 filterscripts.
+
+[12:54:10]  
+[12:54:10]  
+[12:54:10]  
+[12:54:10]  ======================================= 
+[12:54:10]  |                                     | 
+[12:54:10]  |        YSI version 4.00.0001        | 
+[12:54:10]  |        By Alex "Y_Less" Cole        | 
+[12:54:10]  |                                     | 
+[12:54:10]  ======================================= 
+[12:54:10]  
+[12:54:10] MySQL connection is successful.
+[12:54:10] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[12:57:27] filterscripts = ""  (string)
+[12:57:27] 
+[12:57:27] Server Plugins
+[12:57:27] --------------
+[12:57:27]  Loading plugin: mysql
+[12:57:27]  >> plugin.mysql: R41-3 successfully loaded.
+[12:57:27]   Loaded.
+[12:57:27]  Loading plugin: sscanf
+[12:57:27] 
+
+[12:57:27]  ===============================
+
+[12:57:27]       sscanf plugin loaded.     
+
+[12:57:27]    (c) 2009 Alex "Y_Less" Cole
+
+[12:57:27]    0.3d-R2 500 Players "dnee"
+
+[12:57:27]  ===============================
+
+[12:57:27]   Loaded.
+[12:57:27]  Loaded 2 plugins.
+
+[12:57:27] 
+[12:57:27] Filterscripts
+[12:57:27] ---------------
+[12:57:27]   Loaded 0 filterscripts.
+
+[12:57:27]  
+[12:57:27]  
+[12:57:27]  
+[12:57:27]  ======================================= 
+[12:57:27]  |                                     | 
+[12:57:27]  |        YSI version 4.00.0001        | 
+[12:57:27]  |        By Alex "Y_Less" Cole        | 
+[12:57:27]  |                                     | 
+[12:57:27]  ======================================= 
+[12:57:27]  
+[12:57:27] MySQL connection is successful.
+[12:57:27] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[12:58:57] filterscripts = ""  (string)
+[12:58:57] 
+[12:58:57] Server Plugins
+[12:58:57] --------------
+[12:58:57]  Loading plugin: mysql
+[12:58:57]  >> plugin.mysql: R41-3 successfully loaded.
+[12:58:57]   Loaded.
+[12:58:57]  Loading plugin: sscanf
+[12:58:57] 
+
+[12:58:57]  ===============================
+
+[12:58:57]       sscanf plugin loaded.     
+
+[12:58:57]    (c) 2009 Alex "Y_Less" Cole
+
+[12:58:57]    0.3d-R2 500 Players "dnee"
+
+[12:58:57]  ===============================
+
+[12:58:57]   Loaded.
+[12:58:57]  Loaded 2 plugins.
+
+[12:58:57] 
+[12:58:57] Filterscripts
+[12:58:57] ---------------
+[12:58:57]   Loaded 0 filterscripts.
+
+[12:58:57]  
+[12:58:57]  
+[12:58:57]  
+[12:58:57]  ======================================= 
+[12:58:57]  |                                     | 
+[12:58:57]  |        YSI version 4.00.0001        | 
+[12:58:57]  |        By Alex "Y_Less" Cole        | 
+[12:58:57]  |                                     | 
+[12:58:57]  ======================================= 
+[12:58:57]  
+[12:58:57] MySQL connection is successful.
+[12:58:57] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[12:59:26] filterscripts = ""  (string)
+[12:59:26] 
+[12:59:26] Server Plugins
+[12:59:26] --------------
+[12:59:26]  Loading plugin: mysql
+[12:59:26]  >> plugin.mysql: R41-3 successfully loaded.
+[12:59:26]   Loaded.
+[12:59:26]  Loading plugin: sscanf
+[12:59:26] 
+
+[12:59:26]  ===============================
+
+[12:59:26]       sscanf plugin loaded.     
+
+[12:59:26]    (c) 2009 Alex "Y_Less" Cole
+
+[12:59:26]    0.3d-R2 500 Players "dnee"
+
+[12:59:26]  ===============================
+
+[12:59:26]   Loaded.
+[12:59:26]  Loaded 2 plugins.
+
+[12:59:26] 
+[12:59:26] Filterscripts
+[12:59:26] ---------------
+[12:59:26]   Loaded 0 filterscripts.
+
+[12:59:26]  
+[12:59:26]  
+[12:59:26]  
+[12:59:26]  ======================================= 
+[12:59:26]  |                                     | 
+[12:59:26]  |        YSI version 4.00.0001        | 
+[12:59:26]  |        By Alex "Y_Less" Cole        | 
+[12:59:26]  |                                     | 
+[12:59:26]  ======================================= 
+[12:59:26]  
+[12:59:26] MySQL connection is successful.
+[12:59:26] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[13:06:59] filterscripts = ""  (string)
+[13:06:59] 
+[13:06:59] Server Plugins
+[13:06:59] --------------
+[13:06:59]  Loading plugin: mysql
+[13:06:59]  >> plugin.mysql: R41-3 successfully loaded.
+[13:06:59]   Loaded.
+[13:06:59]  Loading plugin: sscanf
+[13:06:59] 
+
+[13:06:59]  ===============================
+
+[13:06:59]       sscanf plugin loaded.     
+
+[13:06:59]    (c) 2009 Alex "Y_Less" Cole
+
+[13:06:59]    0.3d-R2 500 Players "dnee"
+
+[13:06:59]  ===============================
+
+[13:06:59]   Loaded.
+[13:06:59]  Loaded 2 plugins.
+
+[13:06:59] 
+[13:06:59] Filterscripts
+[13:06:59] ---------------
+[13:06:59]   Loaded 0 filterscripts.
+
+[13:06:59]  
+[13:06:59]  
+[13:06:59]  
+[13:06:59]  ======================================= 
+[13:06:59]  |                                     | 
+[13:06:59]  |        YSI version 4.00.0001        | 
+[13:06:59]  |        By Alex "Y_Less" Cole        | 
+[13:06:59]  |                                     | 
+[13:06:59]  ======================================= 
+[13:06:59]  
+[13:06:59] MySQL connection is successful.
+[13:06:59] Number of vehicle models: 0
+[13:06:59] [connection] 25.47.249.48:60213 requests connection cookie.
+[13:07:00] [connection] incoming connection: 25.47.249.48:60213 id: 0
+[13:07:02] [join] Yamato has joined the server (0:25.47.249.48)
+[13:07:12] Yamato (0) are level helper 0
+Console input: gmx
+[13:07:51] MySQL connection failed. Server is shutting down.
+[13:07:51] Number of vehicle models: 0
+[13:07:51] --- Server Shutting Down.
+[13:07:51] [part] Yamato has left the server (0:0)
+[13:07:51] plugin.mysql: Unloading plugin...
+[13:07:51] plugin.mysql: Plugin unloaded.
+[13:07:51] 
+
+[13:07:51]  ===============================
+
+[13:07:51]      sscanf plugin unloaded.    
+
+[13:07:51]  ===============================
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[13:07:57] filterscripts = ""  (string)
+[13:07:57] 
+[13:07:57] Server Plugins
+[13:07:57] --------------
+[13:07:57]  Loading plugin: mysql
+[13:07:57]  >> plugin.mysql: R41-3 successfully loaded.
+[13:07:57]   Loaded.
+[13:07:57]  Loading plugin: sscanf
+[13:07:57] 
+
+[13:07:57]  ===============================
+
+[13:07:57]       sscanf plugin loaded.     
+
+[13:07:57]    (c) 2009 Alex "Y_Less" Cole
+
+[13:07:57]    0.3d-R2 500 Players "dnee"
+
+[13:07:57]  ===============================
+
+[13:07:57]   Loaded.
+[13:07:57]  Loaded 2 plugins.
+
+[13:07:57] 
+[13:07:57] Filterscripts
+[13:07:57] ---------------
+[13:07:57]   Loaded 0 filterscripts.
+
+[13:07:57] MySQL connection failed. Server is shutting down.
+[13:07:57] Number of vehicle models: 0
+[13:07:57] --- Server Shutting Down.
+[13:07:57] plugin.mysql: Unloading plugin...
+[13:07:57] plugin.mysql: Plugin unloaded.
+[13:07:57] 
+
+[13:07:57]  ===============================
+
+[13:07:57]      sscanf plugin unloaded.    
+
+[13:07:57]  ===============================
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[13:07:59] filterscripts = ""  (string)
+[13:07:59] 
+[13:07:59] Server Plugins
+[13:07:59] --------------
+[13:07:59]  Loading plugin: mysql
+[13:07:59]  >> plugin.mysql: R41-3 successfully loaded.
+[13:07:59]   Loaded.
+[13:07:59]  Loading plugin: sscanf
+[13:07:59] 
+
+[13:07:59]  ===============================
+
+[13:07:59]       sscanf plugin loaded.     
+
+[13:07:59]    (c) 2009 Alex "Y_Less" Cole
+
+[13:07:59]    0.3d-R2 500 Players "dnee"
+
+[13:07:59]  ===============================
+
+[13:07:59]   Loaded.
+[13:07:59]  Loaded 2 plugins.
+
+[13:07:59] 
+[13:07:59] Filterscripts
+[13:07:59] ---------------
+[13:07:59]   Loaded 0 filterscripts.
+
+[13:07:59] MySQL connection failed. Server is shutting down.
+[13:07:59] Number of vehicle models: 0
+[13:07:59] --- Server Shutting Down.
+[13:07:59] plugin.mysql: Unloading plugin...
+[13:07:59] plugin.mysql: Plugin unloaded.
+[13:07:59] 
+
+[13:07:59]  ===============================
+
+[13:07:59]      sscanf plugin unloaded.    
+
+[13:07:59]  ===============================
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[13:08:00] filterscripts = ""  (string)
+[13:08:00] 
+[13:08:00] Server Plugins
+[13:08:00] --------------
+[13:08:00]  Loading plugin: mysql
+[13:08:00]  >> plugin.mysql: R41-3 successfully loaded.
+[13:08:00]   Loaded.
+[13:08:00]  Loading plugin: sscanf
+[13:08:00] 
+
+[13:08:00]  ===============================
+
+[13:08:00]       sscanf plugin loaded.     
+
+[13:08:00]    (c) 2009 Alex "Y_Less" Cole
+
+[13:08:00]    0.3d-R2 500 Players "dnee"
+
+[13:08:00]  ===============================
+
+[13:08:00]   Loaded.
+[13:08:00]  Loaded 2 plugins.
+
+[13:08:00] 
+[13:08:00] Filterscripts
+[13:08:00] ---------------
+[13:08:00]   Loaded 0 filterscripts.
+
+[13:08:00] MySQL connection failed. Server is shutting down.
+[13:08:00] Number of vehicle models: 0
+[13:08:00] --- Server Shutting Down.
+[13:08:00] plugin.mysql: Unloading plugin...
+[13:08:00] plugin.mysql: Plugin unloaded.
+[13:08:00] 
+
+[13:08:00]  ===============================
+
+[13:08:00]      sscanf plugin unloaded.    
+
+[13:08:00]  ===============================
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[13:16:33] filterscripts = ""  (string)
+[13:16:33] 
+[13:16:33] Server Plugins
+[13:16:33] --------------
+[13:16:33]  Loading plugin: mysql
+[13:16:33]  >> plugin.mysql: R41-3 successfully loaded.
+[13:16:33]   Loaded.
+[13:16:33]  Loading plugin: sscanf
+[13:16:33] 
+
+[13:16:33]  ===============================
+
+[13:16:33]       sscanf plugin loaded.     
+
+[13:16:33]    (c) 2009 Alex "Y_Less" Cole
+
+[13:16:33]    0.3d-R2 500 Players "dnee"
+
+[13:16:33]  ===============================
+
+[13:16:33]   Loaded.
+[13:16:33]  Loaded 2 plugins.
+
+[13:16:33] 
+[13:16:33] Filterscripts
+[13:16:33] ---------------
+[13:16:33]   Loaded 0 filterscripts.
+
+[13:16:33] MySQL connection is successful.
+[13:16:33] Number of vehicle models: 0
+[13:16:45] [connection] 25.47.249.48:56132 requests connection cookie.
+[13:16:46] [connection] incoming connection: 25.47.249.48:56132 id: 0
+[13:16:48] [join] Yamato has joined the server (0:25.47.249.48)
+[13:16:51] Yamato (0) are level helper 2
+[13:17:27] [part] Yamato has left the server (0:1)
+Console input: gmx
+[13:25:20] MySQL connection is successful.
+[13:25:20] Number of vehicle models: 0
+[13:25:34] [connection] 25.47.249.48:63722 requests connection cookie.
+[13:25:35] [connection] incoming connection: 25.47.249.48:63722 id: 0
+[13:25:35] [join] Yamato has joined the server (0:25.47.249.48)
+[13:25:38] Yamato (0) are level helper 2
+[13:26:14] [connection] 127.0.0.1:51728 requests connection cookie.
+[13:26:15] [connection] incoming connection: 127.0.0.1:51728 id: 1
+[13:26:15] [join] Maurice has joined the server (1:127.0.0.1)
+[13:26:19] Maurice (1) are level helper 0
+[13:26:49] RCON (In-Game): Player #1 (Maurice) has logged in.
+[13:27:06] RCON (In-Game): Player #0 (Yamato) has logged in.
+Console input: gmx
+[13:48:32]  
+[13:48:32]  
+[13:48:32]  
+[13:48:32]  ======================================= 
+[13:48:32]  |                                     | 
+[13:48:32]  |        YSI version 4.00.0001        | 
+[13:48:32]  |        By Alex "Y_Less" Cole        | 
+[13:48:32]  |                                     | 
+[13:48:32]  ======================================= 
+[13:48:32]  
+[13:48:32] MySQL connection is successful.
+[13:48:32] Number of vehicle models: 0
+[13:48:41] Maurice (1) are level helper 1
+[13:48:42] Yamato (0) are level helper 2
+[13:49:08] sscanf warning: Strings without a length are deprecated, please add a destination size.
+[13:49:20] sscanf warning: Strings without a length are deprecated, please add a destination size.
+Console input: gmxgmx
+Console input: dsa
+[14:04:40] RCON (In-Game): Player [Maurice] sent command: gmx
+[14:04:52]  
+[14:04:52]  
+[14:04:52]  
+[14:04:52]  ======================================= 
+[14:04:52]  |                                     | 
+[14:04:52]  |        YSI version 4.00.0001        | 
+[14:04:52]  |        By Alex "Y_Less" Cole        | 
+[14:04:52]  |                                     | 
+[14:04:52]  ======================================= 
+[14:04:52]  
+[14:04:52] MySQL connection is successful.
+[14:04:52] Number of vehicle models: 0
+[14:04:55] Maurice (1) are level helper 1
+[14:04:55] Yamato (0) are level helper 2
+[14:52:28] RCON (In-Game): Player [Maurice] sent command: gmx
+[14:52:40]  
+[14:52:40]  
+[14:52:40]  
+[14:52:40]  ======================================= 
+[14:52:40]  |                                     | 
+[14:52:40]  |        YSI version 4.00.0001        | 
+[14:52:40]  |        By Alex "Y_Less" Cole        | 
+[14:52:40]  |                                     | 
+[14:52:40]  ======================================= 
+[14:52:40]  
+[14:52:40] MySQL connection is successful.
+[14:52:40] Number of vehicle models: 0
+[14:52:43] Maurice (1) are level helper 2
+[14:52:44] Yamato (0) are level helper 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[15:11:48] filterscripts = ""  (string)
+[15:11:48] 
+[15:11:48] Server Plugins
+[15:11:48] --------------
+[15:11:48]  Loading plugin: mysql
+[15:11:49]  >> plugin.mysql: R41-3 successfully loaded.
+[15:11:49]   Loaded.
+[15:11:49]  Loading plugin: sscanf
+[15:11:49] 
+
+[15:11:49]  ===============================
+
+[15:11:49]       sscanf plugin loaded.     
+
+[15:11:49]    (c) 2009 Alex "Y_Less" Cole
+
+[15:11:49]    0.3d-R2 500 Players "dnee"
+
+[15:11:49]  ===============================
+
+[15:11:49]   Loaded.
+[15:11:49]  Loaded 2 plugins.
+
+[15:11:49] 
+[15:11:49] Filterscripts
+[15:11:49] ---------------
+[15:11:49]   Loaded 0 filterscripts.
+
+[15:11:50]  
+[15:11:50]  
+[15:11:50]  
+[15:11:50]  ======================================= 
+[15:11:50]  |                                     | 
+[15:11:50]  |        YSI version 4.00.0001        | 
+[15:11:50]  |        By Alex "Y_Less" Cole        | 
+[15:11:50]  |                                     | 
+[15:11:50]  ======================================= 
+[15:11:50]  
+[15:11:50] MySQL connection is successful.
+[15:11:50] Number of vehicle models: 0
+[15:11:57] [connection] 25.47.249.48:65092 requests connection cookie.
+[15:11:58] [connection] incoming connection: 25.47.249.48:65092 id: 0
+[15:11:59] [join] Yamato has joined the server (0:25.47.249.48)
+[15:12:06] Yamato (0) are level helper 0
+[15:12:40] [connection] 127.0.0.1:55899 requests connection cookie.
+[15:12:41] [connection] incoming connection: 127.0.0.1:55899 id: 1
+[15:12:42] [join] Maurice has joined the server (1:127.0.0.1)
+[15:12:44] Maurice (1) are level helper 2
+[15:13:30] RCON (In-Game): Player #1 (Maurice) has logged in.
+[15:13:32] RCON (In-Game): Player [Maurice] sent command: gmx
+[15:13:44]  
+[15:13:44]  
+[15:13:44]  
+[15:13:44]  ======================================= 
+[15:13:44]  |                                     | 
+[15:13:44]  |        YSI version 4.00.0001        | 
+[15:13:44]  |        By Alex "Y_Less" Cole        | 
+[15:13:44]  |                                     | 
+[15:13:44]  ======================================= 
+[15:13:44]  
+[15:13:44] MySQL connection is successful.
+[15:13:44] Number of vehicle models: 0
+[15:13:46] Maurice (1) are level helper 2
+[15:13:48] Yamato (0) are level helper 0
+[15:16:08] [part] Maurice has left the server (1:1)
+[15:17:02] [part] Yamato has left the server (0:0)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[15:51:55] filterscripts = ""  (string)
+[15:51:55] 
+[15:51:55] Server Plugins
+[15:51:55] --------------
+[15:51:55]  Loading plugin: mysql
+[15:51:55]  >> plugin.mysql: R41-3 successfully loaded.
+[15:51:55]   Loaded.
+[15:51:55]  Loading plugin: sscanf
+[15:51:55] 
+
+[15:51:55]  ===============================
+
+[15:51:55]       sscanf plugin loaded.     
+
+[15:51:55]    (c) 2009 Alex "Y_Less" Cole
+
+[15:51:55]    0.3d-R2 500 Players "dnee"
+
+[15:51:55]  ===============================
+
+[15:51:55]   Loaded.
+[15:51:55]  Loaded 2 plugins.
+
+[15:51:56] 
+[15:51:56] Filterscripts
+[15:51:56] ---------------
+[15:51:56]   Loaded 0 filterscripts.
+
+[15:51:56]  
+[15:51:56]  
+[15:51:56]  
+[15:51:56]  ======================================= 
+[15:51:56]  |                                     | 
+[15:51:56]  |        YSI version 4.00.0001        | 
+[15:51:56]  |        By Alex "Y_Less" Cole        | 
+[15:51:56]  |                                     | 
+[15:51:56]  ======================================= 
+[15:51:56]  
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[15:52:28] filterscripts = ""  (string)
+[15:52:28] 
+[15:52:28] Server Plugins
+[15:52:28] --------------
+[15:52:28]  Loading plugin: mysql
+[15:52:28]  >> plugin.mysql: R41-3 successfully loaded.
+[15:52:28]   Loaded.
+[15:52:28]  Loading plugin: sscanf
+[15:52:28] 
+
+[15:52:28]  ===============================
+
+[15:52:28]       sscanf plugin loaded.     
+
+[15:52:28]    (c) 2009 Alex "Y_Less" Cole
+
+[15:52:28]    0.3d-R2 500 Players "dnee"
+
+[15:52:28]  ===============================
+
+[15:52:28]   Loaded.
+[15:52:28]  Loaded 2 plugins.
+
+[15:52:28] 
+[15:52:28] Filterscripts
+[15:52:28] ---------------
+[15:52:28]   Loaded 0 filterscripts.
+
+[15:52:28]  
+[15:52:28]  
+[15:52:28]  
+[15:52:28]  ======================================= 
+[15:52:28]  |                                     | 
+[15:52:28]  |        YSI version 4.00.0001        | 
+[15:52:28]  |        By Alex "Y_Less" Cole        | 
+[15:52:28]  |                                     | 
+[15:52:28]  ======================================= 
+[15:52:28]  
+[15:52:28] MySQL connection is successful.
+[15:52:28] Number of vehicle models: 0
+[15:55:36] [connection] 25.47.249.48:51700 requests connection cookie.
+[15:55:37] [connection] incoming connection: 25.47.249.48:51700 id: 0
+[15:55:38] [join] Yamato has joined the server (0:25.47.249.48)
+[15:55:43] Yamato (0) are level helper 0
+Console input: gmx
+[16:03:13]  
+[16:03:13]  
+[16:03:13]  
+[16:03:13]  ======================================= 
+[16:03:13]  |                                     | 
+[16:03:13]  |        YSI version 4.00.0001        | 
+[16:03:13]  |        By Alex "Y_Less" Cole        | 
+[16:03:13]  |                                     | 
+[16:03:13]  ======================================= 
+[16:03:13]  
+[16:03:13] MySQL connection is successful.
+[16:03:13] Number of vehicle models: 0
+[16:03:16] Yamato (0) are level helper 0
+[16:03:44] [connection] 127.0.0.1:50365 requests connection cookie.
+[16:03:46] [connection] incoming connection: 127.0.0.1:50365 id: 1
+[16:03:46] [join] Prodotto has joined the server (1:127.0.0.1)
+[16:03:50] [part] Prodotto has left the server (1:1)
+[16:04:11] [connection] 127.0.0.1:50183 requests connection cookie.
+[16:04:12] [connection] incoming connection: 127.0.0.1:50183 id: 1
+[16:04:12] [join] Maurice has joined the server (1:127.0.0.1)
+[16:04:15] Maurice (1) are level helper 2
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[16:10:41] filterscripts = ""  (string)
+[16:10:41] 
+[16:10:41] Server Plugins
+[16:10:41] --------------
+[16:10:41]  Loading plugin: mysql
+[16:10:41]  >> plugin.mysql: R41-3 successfully loaded.
+[16:10:41]   Loaded.
+[16:10:41]  Loading plugin: sscanf
+[16:10:41] 
+
+[16:10:41]  ===============================
+
+[16:10:41]       sscanf plugin loaded.     
+
+[16:10:41]    (c) 2009 Alex "Y_Less" Cole
+
+[16:10:41]    0.3d-R2 500 Players "dnee"
+
+[16:10:41]  ===============================
+
+[16:10:41]   Loaded.
+[16:10:41]  Loading plugin: crashdetect
+[16:10:41]   Failed.
+[16:10:41]  Loaded 2 plugins.
+
+[16:10:41] 
+[16:10:41] Filterscripts
+[16:10:41] ---------------
+[16:10:41]   Loaded 0 filterscripts.
+
+[16:10:41]  
+[16:10:41]  
+[16:10:41]  
+[16:10:41]  ======================================= 
+[16:10:41]  |                                     | 
+[16:10:41]  |        YSI version 4.00.0001        | 
+[16:10:41]  |        By Alex "Y_Less" Cole        | 
+[16:10:41]  |                                     | 
+[16:10:41]  ======================================= 
+[16:10:41]  
+[16:10:41] MySQL connection is successful.
+[16:10:41] Number of vehicle models: 0
+[16:10:45] [connection] 25.47.249.48:52789 requests connection cookie.
+[16:10:46] [connection] incoming connection: 25.47.249.48:52789 id: 0
+[16:10:47] [join] Yamato has joined the server (0:25.47.249.48)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[16:10:51] filterscripts = ""  (string)
+[16:10:51] 
+[16:10:51] Server Plugins
+[16:10:51] --------------
+[16:10:51]  Loading plugin: mysql
+[16:10:51]  >> plugin.mysql: R41-3 successfully loaded.
+[16:10:51]   Loaded.
+[16:10:51]  Loading plugin: sscanf
+[16:10:51] 
+
+[16:10:51]  ===============================
+
+[16:10:51]       sscanf plugin loaded.     
+
+[16:10:51]    (c) 2009 Alex "Y_Less" Cole
+
+[16:10:51]    0.3d-R2 500 Players "dnee"
+
+[16:10:51]  ===============================
+
+[16:10:51]   Loaded.
+[16:10:51]  Loading plugin: crashdetect
+[16:10:51]   Failed.
+[16:10:51]  Loaded 2 plugins.
+
+[16:10:51] 
+[16:10:51] Filterscripts
+[16:10:51] ---------------
+[16:10:51]   Loaded 0 filterscripts.
+
+[16:10:51]  
+[16:10:51]  
+[16:10:51]  
+[16:10:51]  ======================================= 
+[16:10:51]  |                                     | 
+[16:10:51]  |        YSI version 4.00.0001        | 
+[16:10:51]  |        By Alex "Y_Less" Cole        | 
+[16:10:51]  |                                     | 
+[16:10:51]  ======================================= 
+[16:10:51]  
+[16:10:51] MySQL connection is successful.
+[16:10:51] Number of vehicle models: 0
+[16:11:01] [connection] 25.47.249.48:52790 requests connection cookie.
+[16:11:02] [connection] incoming connection: 25.47.249.48:52790 id: 0
+[16:11:03] [join] Yamato has joined the server (0:25.47.249.48)
+[16:11:05] Yamato (0) are level helper 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[16:11:19] filterscripts = ""  (string)
+[16:11:19] 
+[16:11:19] Server Plugins
+[16:11:19] --------------
+[16:11:19]  Loading plugin: mysql
+[16:11:19]  >> plugin.mysql: R41-3 successfully loaded.
+[16:11:19]   Loaded.
+[16:11:19]  Loading plugin: sscanf
+[16:11:19] 
+
+[16:11:19]  ===============================
+
+[16:11:19]       sscanf plugin loaded.     
+
+[16:11:19]    (c) 2009 Alex "Y_Less" Cole
+
+[16:11:19]    0.3d-R2 500 Players "dnee"
+
+[16:11:19]  ===============================
+
+[16:11:19]   Loaded.
+[16:11:19]  Loading plugin: crashdetect
+[16:11:19]   Failed.
+[16:11:19]  Loaded 2 plugins.
+
+[16:11:19] 
+[16:11:19] Filterscripts
+[16:11:19] ---------------
+[16:11:19]   Loaded 0 filterscripts.
+
+[16:11:19]  
+[16:11:19]  
+[16:11:19]  
+[16:11:19]  ======================================= 
+[16:11:19]  |                                     | 
+[16:11:19]  |        YSI version 4.00.0001        | 
+[16:11:19]  |        By Alex "Y_Less" Cole        | 
+[16:11:19]  |                                     | 
+[16:11:19]  ======================================= 
+[16:11:19]  
+[16:11:19] MySQL connection is successful.
+[16:11:19] Number of vehicle models: 0
+[16:11:21] --- Server Shutting Down.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[16:11:32] filterscripts = ""  (string)
+[16:11:32] 
+[16:11:32] Server Plugins
+[16:11:32] --------------
+[16:11:32]  Loading plugin: mysql
+[16:11:32]  >> plugin.mysql: R41-3 successfully loaded.
+[16:11:32]   Loaded.
+[16:11:32]  Loading plugin: sscanf
+[16:11:32] 
+
+[16:11:32]  ===============================
+
+[16:11:32]       sscanf plugin loaded.     
+
+[16:11:32]    (c) 2009 Alex "Y_Less" Cole
+
+[16:11:32]    0.3d-R2 500 Players "dnee"
+
+[16:11:32]  ===============================
+
+[16:11:32]   Loaded.
+[16:11:32]  Loading plugin: crashdetect
+[16:11:32]   CrashDetect v4.18.1 is OK.
+[16:11:32]   Loaded.
+[16:11:32]  Loaded 3 plugins.
+
+[16:11:32] 
+[16:11:32] Filterscripts
+[16:11:32] ---------------
+[16:11:32]   Loaded 0 filterscripts.
+
+[16:11:33]  
+[16:11:33]  
+[16:11:33]  
+[16:11:33]  ======================================= 
+[16:11:33]  |                                     | 
+[16:11:33]  |        YSI version 4.00.0001        | 
+[16:11:33]  |        By Alex "Y_Less" Cole        | 
+[16:11:33]  |                                     | 
+[16:11:33]  ======================================= 
+[16:11:33]  
+[16:11:33] MySQL connection is successful.
+[16:11:33] Number of vehicle models: 0
+[16:11:37] [connection] 25.47.249.48:52793 requests connection cookie.
+[16:11:38] [connection] 127.0.0.1:61194 requests connection cookie.
+[16:11:38] [connection] incoming connection: 25.47.249.48:52793 id: 0
+[16:11:39] [connection] incoming connection: 127.0.0.1:61194 id: 1
+[16:11:39] [join] Yamato has joined the server (0:25.47.249.48)
+[16:11:39] [join] Maurice has joined the server (1:127.0.0.1)
+[16:11:41] Maurice (1) are level helper 2
+[16:11:42] Yamato (0) are level helper 0
+[16:12:46] RCON (In-Game): Player #0 (Yamato) has logged in.
+[16:12:52] RCON (In-Game): Player #1 (Maurice) has logged in.
+[16:12:53] RCON (In-Game): Player [Yamato] sent command: gmx
+[16:13:05]  
+[16:13:05]  
+[16:13:05]  
+[16:13:05]  ======================================= 
+[16:13:05]  |                                     | 
+[16:13:05]  |        YSI version 4.00.0001        | 
+[16:13:05]  |        By Alex "Y_Less" Cole        | 
+[16:13:05]  |                                     | 
+[16:13:05]  ======================================= 
+[16:13:05]  
+[16:13:05] MySQL connection is successful.
+[16:13:05] Number of vehicle models: 0
+[16:13:07] Maurice (1) are level helper 2
+[16:13:07] Yamato (0) are level helper 0
+[16:16:13] RCON (In-Game): Player [Yamato] sent command: login changeme1
+[16:16:13] RCON (In-Game): Player [Yamato] sent command: login changeme1
+[16:16:13] RCON (In-Game): Player [Yamato] sent command: login changeme1
+[16:16:14] RCON (In-Game): Player [Yamato] sent command: gmx
+[16:16:26]  
+[16:16:26]  
+[16:16:26]  
+[16:16:26]  ======================================= 
+[16:16:26]  |                                     | 
+[16:16:26]  |        YSI version 4.00.0001        | 
+[16:16:26]  |        By Alex "Y_Less" Cole        | 
+[16:16:26]  |                                     | 
+[16:16:26]  ======================================= 
+[16:16:26]  
+[16:16:26] MySQL connection is successful.
+[16:16:26] Number of vehicle models: 0
+[16:16:29] Maurice (1) are level helper 2
+[16:16:29] Yamato (0) are level helper 0
+[16:18:29] RCON (In-Game): Player [Yamato] sent command: gmx
+[16:18:41]  
+[16:18:41]  
+[16:18:41]  
+[16:18:41]  ======================================= 
+[16:18:41]  |                                     | 
+[16:18:41]  |        YSI version 4.00.0001        | 
+[16:18:41]  |        By Alex "Y_Less" Cole        | 
+[16:18:41]  |                                     | 
+[16:18:41]  ======================================= 
+[16:18:41]  
+[16:18:41] MySQL connection is successful.
+[16:18:41] Number of vehicle models: 0
+[16:18:43] Maurice (1) are level helper 2
+[16:18:43] Yamato (0) are level helper 0
+[16:19:58] [part] Maurice has left the server (1:1)
+[16:20:17] [part] Yamato has left the server (0:1)
+[16:20:36] --- Server Shutting Down.

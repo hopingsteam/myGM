@@ -1,0 +1,7 @@
+Feautures:
+- MySQL R41-3
+- Foreach
+- ZCMD + SSCANF
+
+myGM v0.1 (17/07/2017)
+*	Versiunea de baza cu pluginul MySQL R41-3 
