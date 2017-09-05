@@ -3,6 +3,9 @@ Feautures:
 - Foreach
 - ZCMD + SSCANF
 
+myGM v0.2b (05/09/2017)
+* Iteratori pentru /helpers
+
 myGM v0.2 (23/07/2017)
 * Adaugat sistem de helperi
 
