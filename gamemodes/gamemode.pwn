@@ -1,5 +1,5 @@
 /*
-	myGM v0.2
+	myGM v0.2b
 	* Please check versionHistory.txt for more details
 	
 #Authors: Maurice and Yamato
@@ -79,6 +79,8 @@ new IntrebareStocata[MAX_PLAYERS][128];
 new HelpMeTimer[MAX_PLAYERS];
 
 new g_MysqlRaceCheck[MAX_PLAYERS];
+
+new Iterator:Helpers<MAX_PLAYERS>;
 
 // dialog data
 enum
@@ -183,6 +185,11 @@ public OnPlayerDisconnect(playerid, reason)
 		HelpMeTimer[playerid] = 0;
 	}
 	
+	if(PlayerData[playerid][HelperLevel] > 0)
+	{
+		Iter_Remove(Helpers, playerid);
+		printf("[DEBUG]: Jucatorul cu id-ul %d este helper, il SCOT din lista...", playerid);
+	}
 	return 1;
 }
 
@@ -373,6 +380,11 @@ AssignPlayerData(playerid)
 	format(string, sizeof(string), "%s (%d) are level helper %d", PlayerData[playerid][Name], playerid, PlayerData[playerid][HelperLevel]);
 	printf(string);
 	
+	if(PlayerData[playerid][HelperLevel] > 0)
+	{
+		Iter_Add(Helpers, playerid);
+		printf("[DEBUG]: Jucatorul cu id-ul %d este Helper, il adaug in lista...", playerid);
+	}
 	return 1;
 }
 
@@ -490,21 +502,18 @@ CMD:helpers(playerid, params[])
 	new string[128];
 	new total = 0, totalDuty = 0;
 	SendClientMessage(playerid, COLOR_OOC, "Helpers Online:");
-	foreach(new i: Player)
+	foreach(new i: Helpers)
 	{
-		if(PlayerData[i][HelperLevel] > 0)
+		if(HelperDuty[i] == 1)
 		{
-			if(HelperDuty[i] == 1)
-			{
-				format(string, sizeof(string), "Helper Level %d %s (%d) - ON DUTY", PlayerData[i][HelperLevel], PlayerData[i][Name], i);
-				totalDuty++;
-			}
-			else
-				format(string, sizeof(string), "Helper Level %d %s (%d)", PlayerData[i][HelperLevel], PlayerData[i][Name], i);
-			SendClientMessage(playerid, COLOR_OOC, string);
-			
-			total++;
+			format(string, sizeof(string), "Helper Level %d %s (%d) - ON DUTY", PlayerData[i][HelperLevel], PlayerData[i][Name], i);
+			totalDuty++;
 		}
+		else
+			format(string, sizeof(string), "Helper Level %d %s (%d)", PlayerData[i][HelperLevel], PlayerData[i][Name], i);
+		SendClientMessage(playerid, COLOR_OOC, string);
+		
+		total++;
 	}
 	format(string, sizeof(string), "In total sunt %d helperi (din care %d ON-DUTY)",total, totalDuty);
 	SendClientMessage(playerid, COLOR_OOC, string);
